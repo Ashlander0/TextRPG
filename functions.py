@@ -2,7 +2,6 @@ import os
 import variables as v
 import charcreate
 
-
 def mainmenu():
 	os.system('cls')
 	v.currentscreen = "main"
@@ -24,7 +23,9 @@ def mainmenu():
 		leave()
 
 def startgame():
+	v.currentscreen = "chargen"
 	charcreate.raceselect()
+	charcreate.classselect()
 
 def loadgame():
 	print("Hi")
