@@ -57,7 +57,7 @@ def raceselect():
 	racecount = 0
 	for x in races:
 		racecount = racecount + 1
-		print(f"[{racecount}] {races[x].get("race")}")
+		print(f"[{racecount}] {races[x]['race']}")
 
 	# adjust raceinput		
 	raceinput = input("\nSelect your race. ")
@@ -66,10 +66,10 @@ def raceselect():
 	# set variables
 	if races.get(str(raceinput)):
 		playerstats["Race"] = races[raceinput]['race']
-		playerstats["Str"] = int(races[str(raceinput)]['Str'])
-		playerstats["End"] = races[(raceinput)]['End']
-		playerstats["Dex"] = races[str(raceinput)]['Dex']
-		playerstats["Int"] = races[str(raceinput)]['Int']
+		playerstats["Str"] = races[raceinput]['Str']
+		playerstats["End"] = races[raceinput]['End']
+		playerstats["Dex"] = races[raceinput]['Dex']
+		playerstats["Int"] = races[raceinput]['Int']
 	
 # class selection function
 def classselect():
@@ -80,9 +80,9 @@ def classselect():
 
 	# display
 	classcount = 0
-	for clas in classes:
+	for x in classes:
 		classcount = classcount + 1
-		print(f'[{classcount}] {clas}')
+		print(f"[{classcount}] {classes[x]['title']}")
 
 	# adjust classinput
 	classinput = input("\nSelect your class. ")
@@ -90,11 +90,11 @@ def classselect():
 
 	# set variables
 	if classes.get(str(classinput)):
-		playerstats["Class"] = classes[str(classinput)]["title"]
-		playerstats["Str"] = playerstats["Str"] + int(races[str(classinput)]['Str'])
-		playerstats["End"] = playerstats["End"] + races[(classinput)]['End']
-		playerstats["Dex"] = playerstats["Dex"] + races[str(classinput)]['Dex']
-		playerstats["Int"] = playerstats["Int"] + races[str(classinput)]['Int']
+		playerstats["Class"] = classes[classinput]["title"]
+		playerstats["Str"] = playerstats["Str"] + classes[classinput]['Str']
+		playerstats["End"] = playerstats["End"] + classes[classinput]['End']
+		playerstats["Dex"] = playerstats["Dex"] + classes[classinput]['Dex']
+		playerstats["Int"] = playerstats["Int"] + classes[classinput]['Int']
 
 	print(f"\nYou are a , with: \nStrength:  \nEndurance:  \nDexterity:  \nIntelligence: ")
 	print(playerstats["Str"])
