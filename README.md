@@ -1,5 +1,5 @@
 # TextRPG
----
+
 TextRPG is an experimental text based RPG run in a terminal. The app is written in Python, but there are plans to convert it to Javascript for running in a web bowser.
 
 ### Usage
